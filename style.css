@@ -159,7 +159,7 @@ nav a:hover {
   width: 100%;
   max-width: 360px;
   height: auto;
-  filter: invert(1) brightness(1.05);
+  filter: none;
   display: block;
 }
 
@@ -177,7 +177,7 @@ nav a:hover {
 
 .hero-title {
   font-weight: 500;
-  font-size: clamp(3.2rem, 6.5vw, 6.2rem);
+  font-size: clamp(2.1rem, 5vw, 5rem);
   line-height: 1.1;
   margin: 0;
   padding-left: 48px;
@@ -187,14 +187,16 @@ nav a:hover {
   justify-content: center;
   align-items: flex-start;
   min-width: 0;
-  width: 100%;
+  width: min(100%, 660px);
   box-sizing: border-box;
   overflow: hidden;
+  transition: font-size 0.2s ease;
 }
 
 .tw-line {
   display: block;
   white-space: nowrap;
+  min-width: 0;
 }
 
 .typewriter {
@@ -204,6 +206,7 @@ nav a:hover {
   border-right: 0.12em solid transparent;
   box-sizing: border-box;
   vertical-align: bottom;
+  width: auto;
   max-width: 100%;
 }
 
@@ -304,7 +307,13 @@ nav a:hover {
   .hero-title {
     padding-left: 0;
     align-items: center;
-    font-size: clamp(2.4rem, 10vw, 4.2rem);
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2rem, 9vw, 3.2rem);
+  }
+
+  .tw-line {
+    white-space: normal;
   }
 
   .hero-divider {
@@ -354,12 +363,18 @@ section h2 {
 }
 
 .about-visual {
-  flex: 0 0 220px;
+  flex: 0 0 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-visual img {
-  width: 100%;
-  filter: invert(1) brightness(1.05);
+  display: block;
+  width: min(100%, 380px);
+  max-width: 100%;
+  height: auto;
+  filter: none;
 }
 
 .about-copy {
@@ -407,7 +422,7 @@ section h2 {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('waves.png');
+  background-image: url('waves.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
